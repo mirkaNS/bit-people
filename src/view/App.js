@@ -39,14 +39,13 @@ class App extends React.Component {
 
     const isGrid = !this.state.isGrid;
     this.setState({ isGrid })
-
   }
 
   render() {
     return (
       <Fragment>
 
-        <Header onClick={this.onClickChangeMode} />
+        <Header onClick={this.onClickChangeMode} isGrid={this.state.isGrid} />
 
         <main className="container clearfix">
 
