@@ -27,10 +27,14 @@ const fetchUserData = () => {
         .then((people) => {
             const listOfUser = people.results;
             // console.log(listOfUser)
+
+
+
             const myUser = listOfUser.map((user) => {
 
                 return new User(user.name.first, user.picture, user.email, user.dob.date);
             });
+
             return myUser;
         })
 }
