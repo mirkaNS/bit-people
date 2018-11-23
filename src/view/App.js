@@ -41,11 +41,23 @@ class App extends React.Component {
     this.setState({ isGrid })
   }
 
+  onClickRefresh = (event) => {
+
+    userService.fetchUserData()
+      .then((user) => {
+        this.setState({
+          myUser: user
+        })
+      })
+  }
+
+
+
   render() {
     return (
       <Fragment>
 
-        <Header onClick={this.onClickChangeMode} isGrid={this.state.isGrid} />
+        <Header onClick={this.onClickChangeMode} isGrid={this.state.isGrid} refresh={this.onClickRefresh} />
 
         <main className="container clearfix">
 
