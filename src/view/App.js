@@ -17,16 +17,22 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      isGrid: false,
-      myUser: []
+      isGrid: this.isGridInUse(),
+      myUser: [],
     }
+  }
+
+  isGridInUse = () => {
+    return !!JSON.parse(localStorage.getItem("isGrid"))
   }
 
   componentDidMount() {
     userService.fetchUserData()
       .then((myUser) => {
-        this.setState({ myUser: myUser })
-      })
+        this.setState({
+          myUser: myUser,
+        });
+      });
   }
 
   componentWillUpdate() { }
@@ -34,11 +40,12 @@ class App extends React.Component {
   componentDidUpdate() { }
 
   onClickChangeMode = (event) => {
-    // const myUser = userService.getData();
-    // this.setState({ myUser })
 
     const isGrid = !this.state.isGrid;
-    this.setState({ isGrid })
+
+    localStorage.setItem("isGrid", isGrid);
+
+    this.setState({ isGrid });
   }
 
   onClickRefresh = (event) => {
@@ -46,7 +53,7 @@ class App extends React.Component {
     userService.fetchUserData()
       .then((user) => {
         this.setState({
-          myUser: user
+          myUser: user,
         })
       })
   }

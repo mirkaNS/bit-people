@@ -25,6 +25,7 @@ const fetchUserData = () => {
             return response.json();
         })
         .then((people) => {
+            console.log(people)
             const listOfUser = people.results;
 
             const myUser = listOfUser.map((user) => {

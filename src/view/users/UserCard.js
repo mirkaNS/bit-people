@@ -10,7 +10,7 @@ const UserCard = (props) => {
                     <span className="card-title">{props.name}</span>
                 </div>
                 <div className="card-content">
-                    <p>Email: {props.email} </p>
+                    <p>Email:{props.email} </p>
                     <p>Date of birth: {props.birthday}</p>
                 </div>
 
