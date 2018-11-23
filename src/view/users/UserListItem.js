@@ -9,9 +9,8 @@ const UserListItem = ({ image, name, email, birthday }) => {
             <li className="collection-item avatar">
                 <img src={image} alt={image} className="circle" />
                 <span className="title">Name: {name}</span>
-                <p> Email: {email} <br />
-                    Date of birth: {birthday}
-                </p>
+                <p> <i className="tiny material-icons">email</i> Email: {email} </p>
+                <p> <i className="tiny material-icons">cake</i> Date of birth: {birthday}</p>
             </li>
         </ul>
     )
