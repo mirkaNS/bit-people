@@ -14,7 +14,7 @@ const UserList = (props) => {
 
     const userCard = props.list.map((user, i) => {
         const date = new Date(user.birthday).toLocaleDateString("en-GB").split("/").join(".");
-        return <UserCard key={i} name={user.name} image={user.image.large} email={user.email} birthday={date + "."} />
+        return <UserCard key={i} name={user.name.charAt(0).toUpperCase() + user.name.slice(1)} image={user.image.large} email={user.hideEmail()} birthday={date + "."} />
     })
 
     return (

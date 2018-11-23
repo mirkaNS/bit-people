@@ -46,13 +46,13 @@ class App extends React.Component {
     return (
       <Fragment>
 
-        <Header />
+        <Header onClick={this.onClickChangeMode} />
 
         <main className="container clearfix">
 
-          <button type="button" className="btn btn-info container" onClick={this.onClickChangeMode} >Click to Change</button>
+          {/* <button type="button" className="btn btn-info container" onClick={this.onClickChangeMode} >Click to Change</button> */}
           {/* <UserCard list={getData} /> */}
-          <UserList className="profile" list={this.state.myUser} isGrid={this.state.isGrid} />
+          <UserList list={this.state.myUser} isGrid={this.state.isGrid} />
         </main>
         <Footer />
       </Fragment >
